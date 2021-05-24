@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 function Section({
   title,
@@ -11,21 +12,25 @@ function Section({
 }) {
   return (
     <Wrap bgImage={image}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{des ? `${des}` : "Order Online for Touchless Devlivery"}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{des ? `${des}` : "Order Online for Touchless Devlivery"}</p>
+        </ItemText>
+      </Fade>
       <Buttons>
-        <ButtonGroup>
-          <LeftButton>
-            {leftBtnText ? `${leftBtnText}` : "Custom Order"}
-          </LeftButton>
-          {!accessories ? (
-            <RightButton>
-              {rightBtnText ? `${rightBtnText}` : "Existing Inventory"}
-            </RightButton>
-          ) : null}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>
+              {leftBtnText ? `${leftBtnText}` : "Custom Order"}
+            </LeftButton>
+            {!accessories ? (
+              <RightButton>
+                {rightBtnText ? `${rightBtnText}` : "Existing Inventory"}
+              </RightButton>
+            ) : null}
+          </ButtonGroup>
+        </Fade>
         <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
     </Wrap>
